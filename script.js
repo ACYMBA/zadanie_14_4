@@ -53,7 +53,7 @@ var MovieImage = React.createClass({
 var Movie = React.createClass({
   render: function() {
     return (
-      React.createElement('li', {key: this.props.movieX.id},
+      React.createElement('li', {},
         React.createElement(MovieTitle, {titleX: this.props.movieX.title}),
         React.createElement(MovieDescription, {desc: this.props.movieX.desc}),
         React.createElement(MovieImage, {srcX: this.props.movieX.poster}),
@@ -63,7 +63,7 @@ var Movie = React.createClass({
 });
 
 var moviesElements = movies.map(function(movie) {
-  return React.createElement(Movie, {movieX: movie})
+  return React.createElement(Movie, {key: movie.id, movieX: movie})
 });
 
 var element =
